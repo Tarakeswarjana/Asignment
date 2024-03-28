@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,16 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+.DotClass{
+  top :50%;
+  left:50%;
+  position: absolute;
+  /* background: #000;
+  z-index: 99;
+margin-left: 989px;
+padding-bottom: 555px; */
+
 }
