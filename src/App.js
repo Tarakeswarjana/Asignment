@@ -9,6 +9,8 @@ import Slider from './component/Slider';
 import SlickSlider from './component/SlickSlider';
 import { useState } from 'react';
 import Footer from './component/Footer';
+import CountUp from 'react-countup'
+import ScrollTrigger from 'react-scroll-trigger';
 const watchicon = require('./assets/Group 2645.png')
 const littleicon = require('./assets/Group 2647.png')
 const sidearrow = require('./assets/Group 9275.png')
@@ -28,6 +30,7 @@ function App() {
   const [showfaq1, setshowfaq1] = useState(false)
   const [showfaq2, setshowfaq2] = useState(false)
   const [showfaq3, setshowfaq3] = useState(false)
+  const [onenterscroll, setonenterscroll] = useState(false)
 
   return (
     <div  >
@@ -79,64 +82,66 @@ function App() {
 
         <SlickSlider />
       </section>
-      <section className='mt-8  bg-slate-200 flex gap-8 align-center justify-between p-18'>
-        <div className='flex-col gap-3  m-8 text-blue-600'>
-          <div className='text-blue-400'>
-            lorem Ipsum
+      <ScrollTrigger onEnter={() => setonenterscroll(true)} onExit={() => setonenterscroll(false)}>
+        <section className='mt-8  bg-slate-200 flex gap-8 align-center justify-between p-18'>
+          <div className='flex-col gap-3  m-8 text-blue-600'>
+            <div className='text-blue-400'>
+              lorem Ipsum
+            </div>
+            <div className='font-bold text-4xl text-blue-600' >
+              {onenterscroll && <CountUp end={123} />} +
+            </div>
+            <div className='text-lg font-bold text-blue-800'>
+              Lorem Ipsum
+            </div>
+            <div className='max-w-[13rem] text-[13px] opacity-3 '>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+            </div>
           </div>
-          <div className='font-bold text-4xl text-blue-600' >
-            123+
+          <div className='flex-col gap-3 text-blue-600 m-8'>
+            <div className='text-blue-400'>
+              lorem Ipsum
+            </div>
+            <div className='font-bold text-4xl text-blue-600' >
+              {onenterscroll && <CountUp end={12} />}+
+            </div>
+            <div className='text-lg font-bold text-blue-800'>
+              Lorem Ipsum
+            </div>
+            <div className='max-w-[13rem] text-[13px] opacity-3 '>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            </div>
           </div>
-          <div className='text-lg font-bold text-blue-800'>
-            Lorem Ipsum
+          <div className='flex-col text-blue-600 gap-3 m-8'>
+            <div className='text-blue-400'>
+              lorem Ipsum
+            </div>
+            <div className='font-bold text-4xl text-blue-600' >
+              {onenterscroll && <CountUp end={123} />}+
+            </div>
+            <div className='text-lg font-bold text-blue-800'>
+              Lorem Ipsum
+            </div>
+            <div className='max-w-[13rem] text-[13px] opacity-3 '>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            </div>
           </div>
-          <div className='max-w-[13rem] text-[13px] opacity-3 '>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+          <div className='flex-col text-blue-600 gap-3 m-8'>
+            <div className='text-blue-400'>
+              lorem Ipsum
+            </div>
+            <div className='font-bold text-4xl text-blue-600 text-blue-600' >
+              {onenterscroll && <CountUp end={123} />}
+            </div>
+            <div className='text-lg font-bold text-blue-800'>
+              Lorem Ipsum
+            </div>
+            <div className='max-w-[13rem] text-[13px] opacity-3 '>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+            </div>
           </div>
-        </div>
-        <div className='flex-col gap-3 text-blue-600 m-8'>
-          <div className='text-blue-400'>
-            lorem Ipsum
-          </div>
-          <div className='font-bold text-4xl text-blue-600' >
-            12+
-          </div>
-          <div className='text-lg font-bold text-blue-800'>
-            Lorem Ipsum
-          </div>
-          <div className='max-w-[13rem] text-[13px] opacity-3 '>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-          </div>
-        </div>
-        <div className='flex-col text-blue-600 gap-3 m-8'>
-          <div className='text-blue-400'>
-            lorem Ipsum
-          </div>
-          <div className='font-bold text-4xl text-blue-600' >
-            123+
-          </div>
-          <div className='text-lg font-bold text-blue-800'>
-            Lorem Ipsum
-          </div>
-          <div className='max-w-[13rem] text-[13px] opacity-3 '>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-          </div>
-        </div>
-        <div className='flex-col text-blue-600 gap-3 m-8'>
-          <div className='text-blue-400'>
-            lorem Ipsum
-          </div>
-          <div className='font-bold text-4xl text-blue-600 text-blue-600' >
-            123
-          </div>
-          <div className='text-lg font-bold text-blue-800'>
-            Lorem Ipsum
-          </div>
-          <div className='max-w-[13rem] text-[13px] opacity-3 '>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-          </div>
-        </div>
-      </section>
+        </section>
+      </ScrollTrigger>
       {/* //faq */}
       <section className='mt-16 ml-10 mr-10'>
         <div className='flex justify-center mr-18 text-blue-600 font-bold text-3xl'>FAQ</div>
@@ -144,7 +149,7 @@ function App() {
           <div className='flex flex-col gap-10  mt-8 justify-between'>
             <div className='flex justify-between items-center mr-8'>
               <p>How does an investor gain access to MF Utility?</p>
-              <img onClick={() => { setshowfaq1(!showfaq1); }} src={showfaq1 ? show_plus : show_minus} />
+              <img onClick={() => { setshowfaq1(!showfaq1); }} src={showfaq1 ? show_minus : show_plus} />
             </div>
             <div className="h-px bg-black max-h-4"></div>
             <div style={{ display: showfaq1 ? "block" : "none" }} className='max-w-[65rem]'>Lorem ipsum dolor sit amet, nsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.Lorem ipsum dolor sit amet, nsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
@@ -153,7 +158,7 @@ function App() {
           <div className='flex flex-col gap-10 mt-8 justify-between'>
             <div className='flex justify-between items-center mr-8'>
               <p>Will investors be able to have multiple Common Account Numbers?</p>
-              <img onClick={() => { setshowfaq2(!showfaq2); }} src={showfaq2 ? show_plus : show_minus} />
+              <img onClick={() => { setshowfaq2(!showfaq2); }} src={showfaq2 ? show_minus : show_plus} />
             </div>
             <div className="h-px bg-black max-h-4"></div>
             <div style={{ display: showfaq2 ? "block" : "none" }} className='max-w-[65rem]'>Lorem ipsum dolor sit amet, nsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.Lorem ipsum dolor sit amet, nsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
@@ -162,7 +167,7 @@ function App() {
           <div className='flex flex-col gap-10 mt-8 justify-between'>
             <div className='flex justify-between items-center mr-8'>
               <p>How does an investor gain access to MF Utility?</p>
-              <img onClick={() => { setshowfaq3(!showfaq3); }} src={showfaq3 ? show_plus : show_minus} />
+              <img onClick={() => { setshowfaq3(!showfaq3); }} src={showfaq3 ? show_minus : show_plus} />
             </div>
             <div className="h-px bg-black max-h-4"></div>
             <div style={{ display: showfaq3 ? "block" : "none" }} className='max-w-[65rem]'>Lorem ipsum dolor sit amet, nsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.Lorem ipsum dolor sit amet, nsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
