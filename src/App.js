@@ -33,7 +33,7 @@ function App() {
     <div  >
       <Navbar />
       <Slider />
-      <section className='mt-16 ml-16 mr-16'>
+      <section className='mt-16 ml-16 mr-16 '>
         <div className='flex gap-3 justify-between'>
           <div className='flex gap-3'>
             <div className='flex-col gap-3 '>

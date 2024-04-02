@@ -18,7 +18,7 @@ function Slider() {
     return (
         // <div className='w-screen'>
 
-        <div className="swiperowndiv">
+        <div className="swiperowndiv container mx-auto px-4 ">
             <Swiper
                 className='relative'
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
